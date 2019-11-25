@@ -24,3 +24,15 @@ docker run --runtime=nvidia \
 --name chineseocr \
 chineseocr \
 /bin/bash
+
+
+
+docker run --runtime=nvidia \
+-it \
+-e NVIDIA_VISIBLE_DEVICES=1 \
+-v ${PWD}:/code \
+--rm \
+--shm-size=2g \
+--name CHINESE_OCR \
+chineseocr:v2 \
+/bin/bash
